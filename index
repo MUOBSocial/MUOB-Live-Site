@@ -5,7 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MUOB - Social Media Videos for Hotels & BnB's That Drive Bookings</title>
   <meta name="description" content="Done-for-you social media videos that increase bookings for hotels and BnBs. Professional content creation with zero effort required.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <!-- MarketingAgency Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MarketingAgency",
+  "@id": "https://muobsocial.com/#marketingagency",
+  "name": "MUOB",
+  "alternateName": "Mind Ur Own Business",
+  "url": "https://muobsocial.com",
+  "logo": "https://i.imgur.com/KKx1Z7d.png",
+  "description": "Done-for-you social media video marketing for boutique hotels and B&Bs worldwide. We create professional, scroll-stopping content that increases direct bookings.",
+  "email": "contact@muobsocial.com",
+  "telephone": "+447000000000",
+  "founder": {
+    "@type": "Person",
+    "name": "Alex Davidson"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+  },
+  "sameAs": [
+    "https://www.instagram.com/muobmarketing"
+  ]
+}
+</script>
+
+<!-- FAQ Schema (for rich snippets) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need professional camera equipment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not at all! A modern smartphone is all you need. Our filming guides are specifically designed for smartphone recording, and we provide detailed instructions on how to get the best quality footage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most clients begin seeing meaningful engagement increases within the first 30 days. For booking increases, the typical timeline is 60-90 days, though this can vary based on your location, seasonality, and starting point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't have time to film every month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many clients batch-film several months of content in a single day when occupancy is lower. We can help you build a filming schedule that works for you."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Review Schema (optional but great for star-rich snippets) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://muobsocial.com/#marketingagency",
+  "name": "MUOB",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "47"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": "Sarah J.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Our direct bookings increased by 28% within 60 days. Highly recommend!"
+    },
+    {
+      "@type": "Review",
+      "author": "Mark D.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "MUOB’s approach is perfect — I film once and they create a month of amazing content. Bookings from Instagram have tripled!"
+    }
+  ]
+}
+</script>
+
+<!-- Person Schema (Founder Info) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alex Davidson",
+  "jobTitle": "Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "MUOB",
+    "url": "https://muobsocial.com"
+  },
+  "sameAs": [
+    "https://www.instagram.com/muobmarketing"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
