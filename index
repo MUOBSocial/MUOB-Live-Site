@@ -95,6 +95,31 @@
       margin: 0 auto;
       padding: 0 2rem;
     }
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MarketingAgency",
+  "name": "MUOB",
+  "alternateName": "Mind Ur Own Business",
+  "url": "https://muobsocial.com",
+  "logo": "https://i.imgur.com/KKx1Z7d.png",
+  "description": "Done-for-you social media video marketing for boutique hotels and B&Bs worldwide. We create professional, scroll-stopping content that increases direct bookings.",
+  "email": "contact@muobsocial.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Alex Davidson"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+  },
+  "sameAs": [
+    "https://www.instagram.com/muobmarketing"
+  ]
+}
+</script>
+
     
     /* Navigation */
     .header {
