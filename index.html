@@ -2187,12 +2187,6 @@
         <h2>Simple, Transparent Pricing</h2>
         <p>All packages include research, scripting, editing, optimization, and publishing.</p>
         <p><strong>The only difference is how many videos you get each month.</strong></p>
-        
-        <!-- Duck Easter Egg -->
-        <div class="duck-easter-egg" id="duckEasterEgg">
-          <img src="https://i.imgur.com/LTrdds5.png" alt="Yellow Rubber Duck" style="width: 100%; height: 100%; object-fit: contain;">
-        </div>
-      </div>
       
       <div class="pricing-container">
         <div class="pricing-card animated delay-1">
@@ -2370,23 +2364,6 @@
       </div>
     </div>
   </section>
-  
-  <!-- Discount Popup -->
-  <div class="popup-overlay" id="popupOverlay"></div>
-  <div class="discount-popup" id="discountPopup">
-    <div class="close-popup" id="closePopup">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#192b6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </div>
-    <h3>You Found the Duck!</h3>
-    <p>Congratulations on discovering our hidden friend! 🎉</p>
-    <h4>Enjoy 10% OFF Your First Month</h4>
-    <div class="discount-code">DUCKFRIEND10</div>
-    <p>Mention this code during your strategy call to claim your discount.</p>
-    <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary">Book Your Call Now</a>
-  </div>
 
   <!-- Lead Capture Popup -->
   <div class="lead-capture" id="leadCapture">
@@ -2590,12 +2567,6 @@
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
       });
-      
-      // Duck Easter Egg Functionality
-      const duckEasterEgg = document.getElementById('duckEasterEgg');
-      const discountPopup = document.getElementById('discountPopup');
-      const popupOverlay = document.getElementById('popupOverlay');
-      const closePopup = document.getElementById('closePopup');
       
       // Function to show popup
       function showDiscountPopup() {
