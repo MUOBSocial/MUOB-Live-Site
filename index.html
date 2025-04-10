@@ -124,7 +124,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <>
+  <style>
 
     /* Mobile Menu Styles */
 .mobile-menu-toggle {
@@ -2808,28 +2808,3 @@ if (mobileMenuToggle && navMenu) {
 }
     });
   </script>
-  <script>
-  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-  const navMenu = document.getElementById('navMenu');
-
-  mobileMenuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-
-  // Close menu when clicking a nav link
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-    });
-  });
-
-  // Optional: Close when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-      navMenu.classList.remove('active');
-    }
-  });
-</script>
-
-</body>
-</html>
