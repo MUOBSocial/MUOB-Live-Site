@@ -2635,8 +2635,8 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target..opacity = '1';
-            entry.target..transform = 'translateY(0)';
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
           }
         });
       }, { threshold: 0.1 });
