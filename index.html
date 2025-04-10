@@ -2572,10 +2572,6 @@
       function showDiscountPopup() {
         discountPopup.classList.add('active');
         popupOverlay.classList.add('active');
-        
-        // Store in localStorage that user found the easter egg
-        localStorage.setItem('duckEasterEggFound', 'true');
-      }
       
       // Function to hide popup
       function hideDiscountPopup() {
@@ -2584,7 +2580,6 @@
       }
       
       // Event listeners
-      duckEasterEgg.addEventListener('click', showDiscountPopup);
       closePopup.addEventListener('click', hideDiscountPopup);
       popupOverlay.addEventListener('click', hideDiscountPopup);
       
