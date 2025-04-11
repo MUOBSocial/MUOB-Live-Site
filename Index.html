@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-21WCBJHLP9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-21WCBJHLP9');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MUOB - Social Media Videos for Hotels & BnB's That Drive Bookings</title>
@@ -1077,12 +1086,19 @@
       border-radius: 8px;
       font-size: 1rem;
       transition: all 0.3s ease;
+      color: #333;
+      background-color: #fff;
     }
     
     .form-control:focus {
       outline: none;
       border-color: #5d6fc1;
       box-shadow: 0 0 0 3px rgba(93, 111, 193, 0.2);
+      color: #333;
+
+      .form-control::placeholder {
+  color: #999; /* Medium gray for placeholder */
+}
     }
     
     /* Lead Capture */
@@ -1124,6 +1140,11 @@
       font-size: 1.2rem;
     }
     
+    .lead-capture .form-control {
+  color: #333; /* Dark text */
+  background-color: #fff; /* White background */
+}
+
     /* Button Styles */
     .btn {
       display: inline-block;
@@ -1499,95 +1520,6 @@
     .review-count {
       font-size: 1.1rem;
       color: #666;
-    }
-    
-    /* Discount Popup */
-    .discount-popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.7);
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(25, 43, 108, 0.2);
-      z-index: 1001;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.4s ease;
-      max-width: 400px;
-      text-align: center;
-      border: 1px solid rgba(25, 43, 108, 0.1);
-    }
-    
-    .discount-popup.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translate(-50%, -50%) scale(1);
-    }
-    
-    .popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(5px);
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-    
-    .popup-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .close-popup {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 25px;
-      height: 25px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .close-popup:hover {
-      transform: rotate(90deg);
-    }
-    
-    .discount-code {
-      background: #f8faff;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      display: inline-block;
-      margin: 1rem 0;
-      color: #192b6c;
-      border: 2px dashed #5d6fc1;
-    }
-    
-    /* Duck Easter Egg */
-    .duck-easter-egg {
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%) rotate(5deg);
-      width: 60px;
-      height: 60px;
-      cursor: pointer;
-      z-index: 999;
-      opacity: 0.9;
-      transition: all 0.3s ease;
-    }
-    
-    .duck-easter-egg:hover {
-      opacity: 1;
-      transform: translateX(-50%) translateY(-5px) rotate(-5deg) scale(1.1);
     }
     
     /* Mobile Responsive Styles */
@@ -2206,12 +2138,6 @@
         <h2>Simple, Transparent Pricing</h2>
         <p>All packages include research, scripting, editing, optimization, and publishing.</p>
         <p><strong>The only difference is how many videos you get each month.</strong></p>
-        
-        <!-- Duck Easter Egg -->
-        <div class="duck-easter-egg" id="duckEasterEgg">
-          <img src="https://i.imgur.com/LTrdds5.png" alt="Yellow Rubber Duck" style="width: 100%; height: 100%; object-fit: contain;">
-        </div>
-      </div>
       
       <div class="pricing-container">
         <div class="pricing-card animated delay-1">
@@ -2231,7 +2157,7 @@
             <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Perfect for: Small B&Bs focused on weekend bookings</p>
           </div>
           <div class="pricing-buttons">
-            <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary">Start with Lite</a>
+            <a href="https://buy.stripe.com/28o6rKdgYcTrbqE8ww" class="btn btn-primary">Start with Lite</a>
           </div>
         </div>
         
@@ -2254,7 +2180,7 @@
             <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Perfect for: Hotels wanting consistent visibility</p>
           </div>
           <div class="pricing-buttons">
-            <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary">Start with Standard</a>
+            <a href="https://buy.stripe.com/dR65nGb8Q7z7cuI146" class="btn btn-primary">Start with Standard</a>
           </div>
         </div>
         
@@ -2277,7 +2203,7 @@
             <p style="text-align: center; margin-top: 1rem; font-weight: 600; color: #666;">Perfect for: Luxury hotels maximizing bookings</p>
           </div>
           <div class="pricing-buttons">
-            <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary">Start with Full-Time</a>
+            <a href="https://buy.stripe.com/8wMeYg6SA06FeCQeUV" class="btn btn-primary">Start with Full-Time</a>
           </div>
         </div>
       </div>
@@ -2389,23 +2315,6 @@
       </div>
     </div>
   </section>
-  
-  <!-- Discount Popup -->
-  <div class="popup-overlay" id="popupOverlay"></div>
-  <div class="discount-popup" id="discountPopup">
-    <div class="close-popup" id="closePopup">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#192b6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </div>
-    <h3>You Found the Duck!</h3>
-    <p>Congratulations on discovering our hidden friend! 🎉</p>
-    <h4>Enjoy 20% OFF Your First Month</h4>
-    <div class="discount-code">DUCKFRIEND20</div>
-    <p>Use this code when booking your free strategy call to claim your discount.</p>
-    <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary">Book Your Call Now</a>
-  </div>
 
   <!-- Lead Capture Popup -->
   <div class="lead-capture" id="leadCapture">
@@ -2609,32 +2518,6 @@
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
       });
-      
-      // Duck Easter Egg Functionality
-      const duckEasterEgg = document.getElementById('duckEasterEgg');
-      const discountPopup = document.getElementById('discountPopup');
-      const popupOverlay = document.getElementById('popupOverlay');
-      const closePopup = document.getElementById('closePopup');
-      
-      // Function to show popup
-      function showDiscountPopup() {
-        discountPopup.classList.add('active');
-        popupOverlay.classList.add('active');
-        
-        // Store in localStorage that user found the easter egg
-        localStorage.setItem('duckEasterEggFound', 'true');
-      }
-      
-      // Function to hide popup
-      function hideDiscountPopup() {
-        discountPopup.classList.remove('active');
-        popupOverlay.classList.remove('active');
-      }
-      
-      // Event listeners
-      duckEasterEgg.addEventListener('click', showDiscountPopup);
-      closePopup.addEventListener('click', hideDiscountPopup);
-      popupOverlay.addEventListener('click', hideDiscountPopup);
       
       // Testimonial Carousel
       const testimonialCarousel = document.getElementById('testimonialCarousel');
