@@ -2471,262 +2471,245 @@
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // FAQ Toggles
-      const faqQuestions = document.querySelectorAll('.faq-question');
+  document.addEventListener('DOMContentLoaded', function() {
+  // FAQ Toggles
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const isActive = question.classList.contains('active');
       
-      faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-          const answer = question.nextElementSibling;
-          const isActive = question.classList.contains('active');
-          
-          // Close all answers
-          document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
-          document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
-          
-          // Open current answer if it was closed
-          if (!isActive) {
-            question.classList.add('active');
-            answer.classList.add('active');
-          }
-        });
-      });
+      // Close all answers
+      document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
       
-      // Sticky CTA on scroll
-      const stickyCta = document.getElementById('stickyCta');
-      let scrolled = false;
-      
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 500 && !scrolled) {
-          stickyCta.style.display = 'block';
-          scrolled = true;
-        } else if (window.scrollY <= 500 && scrolled) {
-          stickyCta.style.display = 'none';
-          scrolled = false;
-        }
-      });
-      
-      // Lead capture popup (show after 30 seconds)
-      const leadCapture = document.getElementById('leadCapture');
-      const leadCaptureClose = document.getElementById('leadCaptureClose');
-      
-      setTimeout(() => {
-        leadCapture.classList.add('active');
-      }, 30000);
-      
-      leadCaptureClose.addEventListener('click', () => {
-        leadCapture.classList.remove('active');
-      });
-      
-      // Chat System Functionality
-      const chatBubble = document.getElementById('chatBubble');
-      const chatPopup = document.getElementById('chatPopup');
-      const bookCallOption = document.getElementById('bookCallOption');
-      const emailOption = document.getElementById('emailOption');
-      
-      // Toggle chat popup
-      chatBubble.addEventListener('click', () => {
-        chatPopup.classList.toggle('active');
-      });
-      
-      // Close popup when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!chatBubble.contains(e.target) && !chatPopup.contains(e.target) && chatPopup.classList.contains('active')) {
-          chatPopup.classList.remove('active');
-        }
-      });
-      
-      // Book call option
-      bookCallOption.addEventListener('click', () => {
-        window.open('https://calendly.com/contact-muobsocial/30min', '_blank');
-        chatPopup.classList.remove('active');
-      });
-      
-      // Email option
-      emailOption.addEventListener('click', () => {
-        window.location.href = 'mailto:contact@muobsocial.com';
-        chatPopup.classList.remove('active');
-      });
-      
-      // Animated elements on scroll
-      const animatedElements = document.querySelectorAll('.animated');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-      });
-      
-      // Function to show popup
-      function showDiscountPopup() {
-        discountPopup.classList.add('active');
-        popupOverlay.classList.add('active');
-      
-      // Function to hide popup
-      function hideDiscountPopup() {
-        discountPopup.classList.remove('active');
-        popupOverlay.classList.remove('active');
+      // Open current answer if it was closed
+      if (!isActive) {
+        question.classList.add('active');
+        answer.classList.add('active');
       }
-      
-      // Event listeners
-      closePopup.addEventListener('click', hideDiscountPopup);
-      popupOverlay.addEventListener('click', hideDiscountPopup);
-      
-      // Testimonial Carousel
-      const testimonialCarousel = document.getElementById('testimonialCarousel');
-      const prevTestimonial = document.getElementById('prevTestimonial');
-      const nextTestimonial = document.getElementById('nextTestimonial');
-      const testimonialDots = document.getElementById('testimonialDots');
-      
-      const testimonialCards = testimonialCarousel.querySelectorAll('.testimonial-card');
-      let currentTestimonial = 0;
-      let testimonialInterval;
-      
-      // Create dots
-      testimonialCards.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('carousel-dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-          goToTestimonial(index);
-          resetTestimonialInterval();
-        });
-        testimonialDots.appendChild(dot);
-      });
-      
-      // Update active dot
-      function updateTestimonialDots() {
-        document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
-          if (index === currentTestimonial) {
-            dot.classList.add('active');
-          } else {
-            dot.classList.remove('active');
-          }
-        });
+    });
+  });
+  
+  // Sticky CTA on scroll
+  const stickyCta = document.getElementById('stickyCta');
+  let scrolled = false;
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500 && !scrolled) {
+      stickyCta.style.display = 'block';
+      scrolled = true;
+    } else if (window.scrollY <= 500 && scrolled) {
+      stickyCta.style.display = 'none';
+      scrolled = false;
+    }
+  });
+  
+  // Lead capture popup (show after 30 seconds)
+  const leadCapture = document.getElementById('leadCapture');
+  const leadCaptureClose = document.getElementById('leadCaptureClose');
+  
+  setTimeout(() => {
+    leadCapture.classList.add('active');
+  }, 30000);
+  
+  leadCaptureClose.addEventListener('click', () => {
+    leadCapture.classList.remove('active');
+  });
+  
+  // Chat System Functionality
+  const chatBubble = document.getElementById('chatBubble');
+  const chatPopup = document.getElementById('chatPopup');
+  const bookCallOption = document.getElementById('bookCallOption');
+  const emailOption = document.getElementById('emailOption');
+  
+  // Toggle chat popup
+  chatBubble.addEventListener('click', () => {
+    chatPopup.classList.toggle('active');
+  });
+  
+  // Close popup when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!chatBubble.contains(e.target) && !chatPopup.contains(e.target) && chatPopup.classList.contains('active')) {
+      chatPopup.classList.remove('active');
+    }
+  });
+  
+  // Book call option
+  bookCallOption.addEventListener('click', () => {
+    window.open('https://calendly.com/contact-muobsocial/30min', '_blank');
+    chatPopup.classList.remove('active');
+  });
+  
+  // Email option
+  emailOption.addEventListener('click', () => {
+    window.location.href = 'mailto:contact@muob.co.uk';
+    chatPopup.classList.remove('active');
+  });
+  
+  // Animated elements on scroll
+  const animatedElements = document.querySelectorAll('.animated');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
       }
-      
-      // Calculate items per slide based on screen width
-      function getItemsPerSlide() {
-        if (window.innerWidth < 768) return 1;
-        if (window.innerWidth < 1024) return 2;
-        return 3;
+    });
+  }, { threshold: 0.1 });
+  
+  animatedElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+  
+  // Testimonial Carousel
+  const testimonialCarousel = document.getElementById('testimonialCarousel');
+  const prevTestimonial = document.getElementById('prevTestimonial');
+  const nextTestimonial = document.getElementById('nextTestimonial');
+  const testimonialDots = document.getElementById('testimonialDots');
+  
+  const testimonialCards = testimonialCarousel.querySelectorAll('.testimonial-card');
+  let currentTestimonial = 0;
+  let testimonialInterval;
+  
+  // Create dots
+  testimonialCards.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('carousel-dot');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      goToTestimonial(index);
+      resetTestimonialInterval();
+    });
+    testimonialDots.appendChild(dot);
+  });
+  
+  // Update active dot
+  function updateTestimonialDots() {
+    document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+      if (index === currentTestimonial) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
       }
+    });
+  }
+  
+  // Calculate items per slide based on screen width
+  function getItemsPerSlide() {
+    if (window.innerWidth < 768) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  }
+  
+  // Go to specific testimonial
+  function goToTestimonial(index) {
+    const itemsPerSlide = getItemsPerSlide();
+    const maxIndex = testimonialCards.length - itemsPerSlide;
+    
+    if (index < 0) index = 0;
+    if (index > maxIndex) index = maxIndex;
+    
+    currentTestimonial = index;
+    const scrollLeft = testimonialCards[index].offsetLeft - testimonialCarousel.offsetLeft;
+    testimonialCarousel.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+    updateTestimonialDots();
+  }
+  
+  // Event listeners for navigation
+  prevTestimonial.addEventListener('click', () => {
+    goToTestimonial(currentTestimonial - 1);
+    resetTestimonialInterval();
+  });
+  
+  nextTestimonial.addEventListener('click', () => {
+    goToTestimonial(currentTestimonial + 1);
+    resetTestimonialInterval();
+  });
+  
+  // Auto-scroll
+  function startTestimonialInterval() {
+    testimonialInterval = setInterval(() => {
+      const itemsPerSlide = getItemsPerSlide();
+      const maxIndex = testimonialCards.length - itemsPerSlide;
       
-      // Go to specific testimonial
-      function goToTestimonial(index) {
-        const itemsPerSlide = getItemsPerSlide();
-        const maxIndex = testimonialCards.length - itemsPerSlide;
-        
-        if (index < 0) index = 0;
-        if (index > maxIndex) index = maxIndex;
-        
-        currentTestimonial = index;
-        const scrollLeft = testimonialCards[index].offsetLeft - testimonialCarousel.offsetLeft;
-        testimonialCarousel.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-        updateTestimonialDots();
-      }
-      
-      // Event listeners for navigation
-      prevTestimonial.addEventListener('click', () => {
-        goToTestimonial(currentTestimonial - 1);
-        resetTestimonialInterval();
-      });
-      
-      nextTestimonial.addEventListener('click', () => {
+      if (currentTestimonial >= maxIndex) {
+        goToTestimonial(0);
+      } else {
         goToTestimonial(currentTestimonial + 1);
-        resetTestimonialInterval();
-      });
-      
-      // Auto-scroll
-      function startTestimonialInterval() {
-        testimonialInterval = setInterval(() => {
-          const itemsPerSlide = getItemsPerSlide();
-          const maxIndex = testimonialCards.length - itemsPerSlide;
-          
-          if (currentTestimonial >= maxIndex) {
-            goToTestimonial(0);
-          } else {
-            goToTestimonial(currentTestimonial + 1);
-          }
-        }, 5000); // Change slide every 5 seconds
       }
-      
-      function resetTestimonialInterval() {
-        clearInterval(testimonialInterval);
-        startTestimonialInterval();
-      }
-      
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        goToTestimonial(currentTestimonial);
-      });
-      
-      // Initialize carousel
-      startTestimonialInterval();
-      
-      // Countdown Timer
-      function updateCountdown() {
-        const now = new Date();
-        const target = new Date();
-        
-        // Set target to 2 days from now at midnight
-        target.setDate(target.getDate() + 2);
-        target.setHours(23, 59, 59, 0);
-        
-        const diff = target - now;
-        
-        if (diff <= 0) {
-          document.getElementById('days').textContent = '0';
-          document.getElementById('hours').textContent = '0';
-          document.getElementById('minutes').textContent = '0';
-          document.getElementById('seconds').textContent = '0';
-          return;
-        }
-        
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        
-        document.getElementById('days').textContent = days;
-        document.getElementById('hours').textContent = hours;
-        document.getElementById('minutes').textContent = minutes;
-        document.getElementById('seconds').textContent = seconds;
-      }
-      
-      // Update countdown every second
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-
-      // Mobile Menu Toggle
-const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-const navMenu = document.getElementById('navMenu');
-
-if (mobileMenuToggle && navMenu) {
-  mobileMenuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    }, 5000); // Change slide every 5 seconds
+  }
+  
+  function resetTestimonialInterval() {
+    clearInterval(testimonialInterval);
+    startTestimonialInterval();
+  }
+  
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    goToTestimonial(currentTestimonial);
   });
+  
+  // Initialize carousel
+  startTestimonialInterval();
+  
+  // Countdown Timer
+  function updateCountdown() {
+    const now = new Date();
+    const target = new Date();
+    
+    // Set target to 2 days from now at midnight
+    target.setDate(target.getDate() + 2);
+    target.setHours(23, 59, 59, 0);
+    
+    const diff = target - now;
+    
+    if (diff <= 0) {
+      document.getElementById('days').textContent = '0';
+      document.getElementById('hours').textContent = '0';
+      document.getElementById('minutes').textContent = '0';
+      document.getElementById('seconds').textContent = '0';
+      return;
+    }
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
+  }
+  
+  // Update countdown every second
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 
-  // Close menu when clicking on a link
-  const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (mobileMenuToggle && navMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
     });
-  });
-}
+
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
     });
-  </script>
+  }
+});
 </body>
 </html>
