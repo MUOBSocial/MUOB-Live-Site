@@ -2321,9 +2321,9 @@
     <div class="lead-capture-close" id="leadCaptureClose">×</div>
     <h4>Get Our Free Guide</h4>
     <p>"7 Social Media Secrets That Drive Hotel Bookings"</p>
-    <form class="newsletter-form">
+    <form class="newsletter-form" id="guideRequestForm">
       <div class="form-group">
-        <input type="email" class="form-control" placeholder="Your Email Address" required>
+        <input type="email" id="visitorEmail" class="form-control" placeholder="Your Email Address" required>
       </div>
       <button type="submit" class="btn btn-primary">Get Free Guide</button>
     </form>
@@ -2663,6 +2663,24 @@ if (mobileMenuToggle && navMenu) {
   });
 }
     });
+    // Handle guide request form submission
+document.getElementById('guideRequestForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Get the visitor's email
+  const visitorEmail = document.getElementById('visitorEmail').value;
+  
+  // Create mailto link
+  const mailtoSubject = encodeURIComponent('Send me my 7 Social Media Secrets That Drive Hotel Bookings Guide');
+  const mailtoBody = encodeURIComponent(`Hello MUOB team,\n\nPlease send me the "7 Social Media Secrets That Drive Hotel Bookings" guide.\n\nMy email is: ${visitorEmail}\n\nThank you!`);
+  const mailtoLink = `mailto:contact@muobsocial.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+  
+  // Show success message
+  document.getElementById('guideRequestForm').innerHTML = '<p style="color: #28a745; font-weight: 600;">Thank you! Click the button below to request your guide.</p><a href="' + mailtoLink + '" class="btn btn-primary" style="margin-top: 15px;">Send Email Request</a>';
+  
+  // Optional: Automatically open the email client
+  // window.location.href = mailtoLink;
+});
   </script>
 </body>
 </html>
