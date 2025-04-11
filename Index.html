@@ -269,9 +269,11 @@
     }
     
     .nav-menu {
-      display: flex;
-      gap: 2rem;
-    }
+  display: flex;
+  gap: 2rem;
+  margin-left: auto;
+  margin-right: 20px;
+}
     
     .nav-link {
       font-weight: 600;
@@ -1741,20 +1743,25 @@
   </style>
 </head>
 <body>
-  <!-- Header with Sticky Navigation -->
   <header class="header">
     <div class="container header-container">
       <a href="#" class="logo">
         <img src="https://i.imgur.com/KKx1Z7d.png" alt="MUOB Logo">
       </a>
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="navMenu">
         <a href="#hero" class="nav-link active">Home</a>
         <a href="#results" class="nav-link">Results</a>
         <a href="#how-it-works" class="nav-link">How It Works</a>
         <a href="#pricing" class="nav-link">Packages</a>
         <a href="#testimonials" class="nav-link">Testimonials</a>
       </nav>
-      <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary btn-small">Book Free Call</a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
   </header>
 
