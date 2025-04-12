@@ -273,6 +273,15 @@
   gap: 2rem;
   margin-left: auto;
   margin-right: 20px;
+  transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+  background: linear-gradient(135deg, #ffffff, #f5f8ff);
+  background-size: 200% 200%;
+  animation: gradientAnimation 3s ease infinite;
+}
+@keyframes gradientAnimation {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
     
     .nav-link {
@@ -281,30 +290,30 @@
       position: relative;
       padding: 0.5rem 0;
       color: #192b6c;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
     
+    .nav-link:hover {
+  transform: translateY(-2px) scale(1.05);
+  color: #5d6fc1;
+}
+
     .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #192b6c;
-      transition: width 0.3s ease;
-    }
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(45deg, #ff6b6b, #ffa76b);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
     
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    
-    .nav-link.active {
-      font-weight: 700;
-    }
-    
-    .nav-link.active::after {
-      width: 100%;
-    }
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
     
     .logo {
       font-weight: 700;
@@ -322,11 +331,36 @@
 
     /* Mobile menu toggle button */
 .mobile-menu-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
   display: none;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0;
+  z-index: 1000;
+}
+
+.menu-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+  background-color: #192b6c;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.mobile-menu-toggle.active .menu-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.mobile-menu-toggle.active .menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active .menu-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .mobile-menu-toggle svg {
@@ -1756,11 +1790,9 @@
         <a href="#testimonials" class="nav-link">Testimonials</a>
       </nav>
       <button class="mobile-menu-toggle" id="mobileMenuToggle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
       </button>
     </div>
   </header>
@@ -2659,6 +2691,7 @@ const navMenu = document.getElementById('navMenu');
 if (mobileMenuToggle && navMenu) {
   mobileMenuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+    mobileMenuToggle.classList.toggle('active');
   });
 
   // Close menu when clicking on a link
