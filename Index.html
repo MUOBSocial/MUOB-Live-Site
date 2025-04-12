@@ -1774,6 +1774,163 @@
   font-size: 1.8rem;
 }
     }
+    /* Contact Modal Styles */
+.contact-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.contact-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.contact-modal-content {
+  background-color: #fff;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(25, 43, 108, 0.15);
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.contact-modal-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(25, 43, 108, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-modal-header h3 {
+  margin: 0;
+  background: linear-gradient(145deg, #192b6c, #5d6fc1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contact-modal-close {
+  font-size: 28px;
+  font-weight: 700;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.contact-modal-close:hover {
+  color: #192b6c;
+}
+
+.contact-modal-body {
+  padding: 20px;
+}
+
+.contact-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.contact-option {
+  display: flex;
+  align-items: center;
+  background: #f5f8ff;
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-option:hover {
+  background: #e6edff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(25, 43, 108, 0.1);
+}
+
+.contact-option-icon {
+  background: rgba(25, 43, 108, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.contact-option-icon svg {
+  stroke: #192b6c;
+}
+
+.contact-option-text h4 {
+  margin: 0 0 5px 0;
+  color: #192b6c;
+  font-size: 1.1rem;
+}
+
+.contact-option-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.contact-form-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(25, 43, 108, 0.1);
+}
+
+.contact-form-container h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #192b6c;
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .contact-options {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 <body>
@@ -1813,13 +1970,13 @@
         
         <div class="cta-highlight">
           <div class="cta-highlight-inner">
-            <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary btn-with-icon">
-              <span>Book Your Free Strategy Call</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <a href="#" class="btn btn-primary btn-with-icon contact-trigger">
+                <span>Get in Touch</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
           </div>
         </div>
         
@@ -1891,8 +2048,13 @@
         </div>
       </div>
       
-      <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary btn-center">Book Your Free Strategy Call</a>
-    </div>
+      <a href="#" class="btn btn-primary btn-with-icon contact-trigger">
+        <span>Get in Touch</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="M12 5l7 7-7 7"></path>
+        </svg>
+      </a>    </div>
   </section>
 
   <!-- Problem Section -->
@@ -1919,8 +2081,14 @@
           </div>
         </div>
         
-        <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary btn-center">Get Your Custom Solution</a>
-      </div>
+        <a href="#" class="btn btn-primary btn-with-icon contact-trigger">
+            <span>Get in Touch</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          </a>    
+          </div>
     </div>
   </section>
 
@@ -1955,8 +2123,13 @@
           <p>If you're not completely satisfied with your first month of content, we'll either redo it until you love it or refund your payment in full — no questions asked.</p>
         </div>
         
-        <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary btn-center">Book Your Free Strategy Call</a>
-      </div>
+        <a href="#" class="btn btn-primary btn-with-icon contact-trigger">
+            <span>Get in Touch</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
     </div>
   </section>
 
@@ -1998,7 +2171,13 @@
         </div>
       </div>
       
-      <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary btn-center">Start Your Social Media Transformation</a>
+      <a href="#" class="btn btn-primary btn-with-icon contact-trigger">
+        <span>Get in Touch</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="M12 5l7 7-7 7"></path>
+        </svg>
+      </a>
     </div>
   </section>
 
@@ -2251,8 +2430,14 @@
         <h3>Not sure which package is right for you?</h3>
         <p>Let's chat about your specific needs and goals during a free strategy call.</p>
         <p>You'll get personalized recommendations and a clear roadmap for your social media success.</p>
-        <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary" style="margin-top: 1rem;">Book Your Free Strategy Call</a>
-      </div>
+        <a href="#" class="btn btn-primary btn-with-icon contact-trigger">
+            <span>Get in Touch</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
     </div>
   </section>
 
@@ -2350,8 +2535,14 @@
         
         <p class="large"><strong>Plus, I'll send you a £25 gift card to your local coffee shop just for your time — even if we don't end up working together.</strong></p>
         
-        <a href="https://calendly.com/contact-muobsocial/30min" class="btn btn-primary" style="padding: 1.2rem 2.5rem; font-size: 1.2rem; margin-top: 1rem;">Book Your Free Strategy Call Now</a>
-      </div>
+        <a href="#" class="btn btn-primary btn-with-icon contact-trigger">
+            <span>Get in Touch</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
     </div>
   </section>
 
@@ -2684,7 +2875,7 @@
       updateCountdown();
       setInterval(updateCountdown, 1000);
 
-      // Mobile Menu Toggle
+     // Mobile Menu Toggle
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const navMenu = document.getElementById('navMenu');
 
@@ -2702,7 +2893,38 @@ if (mobileMenuToggle && navMenu) {
     });
   });
 }
-    });
+
+// Contact Modal Functionality
+const contactButtons = document.querySelectorAll('.contact-trigger');
+const contactModal = document.getElementById('contactModal');
+const contactModalClose = document.getElementById('contactModalClose');
+
+// Open modal when any contact trigger is clicked
+contactButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    contactModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  });
+});
+
+// Close modal when X is clicked
+contactModalClose.addEventListener('click', () => {
+  contactModal.classList.remove('active');
+  document.body.style.overflow = ''; // Re-enable scrolling
+});
+
+// Close modal when clicking outside content
+contactModal.addEventListener('click', (e) => {
+  if (e.target === contactModal) {
+    contactModal.classList.remove('active');
+    document.body.style.overflow = ''; // Re-enable scrolling
+  }
+});
+
+}); // <-- This is the closing bracket of document.addEventListener
+
+// Handle guide request form submission
     // Handle guide request form submission
 document.getElementById('guideRequestForm').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -2722,5 +2944,77 @@ document.getElementById('guideRequestForm').addEventListener('submit', function(
   // window.location.href = mailtoLink;
 });
   </script>
+  <!-- Contact Form Modal -->
+<div class="contact-modal" id="contactModal">
+    <div class="contact-modal-content">
+      <div class="contact-modal-header">
+        <h3>Get in Touch</h3>
+        <span class="contact-modal-close" id="contactModalClose">&times;</span>
+      </div>
+      <div class="contact-modal-body">
+        <p>Choose how you'd prefer to connect with us:</p>
+        
+        <div class="contact-options">
+          <a href="https://calendly.com/contact-muobsocial/30min" class="contact-option">
+            <div class="contact-option-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <div class="contact-option-text">
+              <h4>Book a Call</h4>
+              <p>Schedule a 30-min free strategy call</p>
+            </div>
+          </a>
+          
+          <a href="mailto:contact@muobsocial.com" class="contact-option">
+            <div class="contact-option-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="contact-option-text">
+              <h4>Email Us</h4>
+              <p>Send us a direct email</p>
+            </div>
+          </a>
+        </div>
+        
+        <div class="contact-form-container">
+          <h4>Quick Contact Form</h4>
+          <form name="contact" method="POST" data-netlify="true" class="contact-form">
+            <input type="hidden" name="form-name" value="contact" />
+            
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="property">Property Name</label>
+              <input type="text" name="property" id="property" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea name="message" id="message" class="form-control" rows="3" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
