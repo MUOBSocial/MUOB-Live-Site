@@ -3002,9 +3002,24 @@ document.getElementById('guideRequestForm').addEventListener('submit', function(
   <button 
   type="button" 
   onclick="sendMail()" 
-  class="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold py-3 px-6 rounded-xl hover:opacity-90 transition">
+  style="
+    background: linear-gradient(to right, #ff6a00, #ff3c7e);
+    color: white;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 9999px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  "
+  onmouseover="this.style.opacity='0.9'"
+  onmouseout="this.style.opacity='1'"
+>
   Send Message
 </button>
+
 </form>
 
 <script>
