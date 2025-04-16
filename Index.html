@@ -1709,6 +1709,21 @@
     margin-top: 10px;
   }
   
+  @media (max-width: 768px) {
+  .contact-options {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-modal-content {
+    max-width: 90%;       /* So it doesn’t go edge to edge */
+    padding: 16px;        /* Reduce padding */
+    max-height: 90vh;     /* Keep modal height in check */
+  }
+
+  .contact-modal-body {
+    padding: 10px;        /* Optional: reduce internal body padding too */
+  }
+}
 /* Better centering for CTA button in hero section on mobile */
 @media (max-width: 768px) {
   .hero-content {
@@ -1780,6 +1795,8 @@
   background-color: #fff;
   width: 100%;
   max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;  
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(25, 43, 108, 0.15);
   position: relative;
