@@ -624,43 +624,62 @@
   .case-study {
     padding: 6rem 0;
     position: relative;
+    background: #f8faff;
   }
   
   .case-study-content {
     display: flex;
-    align-items: flex-start;
-    gap: 3rem;
+    gap: 2rem;
     margin-top: 3rem;
   }
   
   .case-study-text {
     flex: 1;
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);
   }
   
+  .case-study-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+  
+  .case-study-text p {
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  
   .case-study-stats {
     display: flex;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
+    gap: 1rem;
+    margin-top: 2rem;
   }
   
   .stat-item {
+    flex: 1;
     background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(25, 43, 108, 0.05);
-    flex: 1;
+    border: 1px solid rgba(25, 43, 108, 0.05);
   }
   
   .stat-value {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #ff6b6b;
     margin-bottom: 0.5rem;
+    line-height: 1;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
   }
   
   @media (max-width: 768px) {
@@ -669,12 +688,17 @@
     }
     
     .case-study-stats {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      flex: 1 1 calc(50% - 0.5rem);
+      min-width: 0;
     }
   }
-</style>
-        
-        /* Form Section */
+    
+    /* Form Section */
         .form-section {
           padding: 6rem 0;
           background: #f8faff;
@@ -1096,15 +1120,15 @@
           <div class="case-study-stats">
             <div class="stat-item">
               <div class="stat-value">500K+</div>
-              <div>Views</div>
+              <div class="stat-label">Views</div>
             </div>
             <div class="stat-item">
               <div class="stat-value">72%</div>
-              <div>Booking Increase</div>
+              <div class="stat-label">Booking Increase</div>
             </div>
             <div class="stat-item">
               <div class="stat-value">1</div>
-              <div>Night Stay</div>
+              <div class="stat-label">Night Stay</div>
             </div>
           </div>
         </div>
@@ -1117,15 +1141,15 @@
           <div class="case-study-stats">
             <div class="stat-item">
               <div class="stat-value">531K</div>
-              <div>Views</div>
+              <div class="stat-label">Views</div>
             </div>
             <div class="stat-item">
               <div class="stat-value">14.2K</div>
-              <div>Likes</div>
+              <div class="stat-label">Likes</div>
             </div>
             <div class="stat-item">
               <div class="stat-value">1</div>
-              <div>Night Stay</div>
+              <div class="stat-label">Night Stay</div>
             </div>
           </div>
         </div>
