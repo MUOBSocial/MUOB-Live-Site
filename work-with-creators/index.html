@@ -621,60 +621,24 @@
         }
         
         /* Case Study Section */
-        .case-study {
-          padding: 6rem 0;
-          position: relative;
-        }
-        
-        .case-study-content {
-          display: flex;
-          align-items: center;
-          gap: 3rem;
-          margin-top: 3rem;
-        }
-        
+       .case-study-content {
+           display: grid;
+           grid-template-columns: repeat(2, 1fr);
+           gap: 3rem;
+           margin-top: 3rem;
+       }
+
         .case-study-text {
-          flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(25, 43, 108, 0.05);
         }
-        
-        .case-study-stats {
-          display: flex;
-          gap: 1.5rem;
-          margin: 1.5rem 0;
-        }
-        
-        .stat-item {
-          background: white;
-          padding: 1.5rem;
-          border-radius: 10px;
-          text-align: center;
-          box-shadow: 0 5px 15px rgba(25, 43, 108, 0.05);
-        }
-        
-        .stat-value {
-          font-size: 2rem;
-          font-weight: 700;
-          color: #ff6b6b;
-          margin-bottom: 0.5rem;
-        }
-        
-        .case-study-images {
-          flex: 1;
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1rem;
-        }
-        
-        .case-study-image {
-          border-radius: 10px;
-          overflow: hidden;
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .case-study-image img {
-          width: 100%;
-          height: auto;
-          display: block;
+
+        @media (max-width: 768px) {
+         .case-study-content {
+            grid-template-columns: 1fr;
+            }
         }
         
         /* Form Section */
